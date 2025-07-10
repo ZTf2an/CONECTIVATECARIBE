@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONECTIVATE CARIBE</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>CONECTIVATE CARIBE</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">Sobre Nosotros</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h2>Sobre Nosotros</h2>
+            <p>Bienvenido a CONECTIVATE CARIBE, su fuente número uno para todo lo relacionado con la conectividad caribeña. Nos dedicamos a ofrecerle lo mejor de los servicios, con un enfoque en la confiabilidad, el servicio al cliente y la singularidad.</p>
+        </section>
+        <section id="services">
+            <h2>Nuestros Servicios</h2>
+            <ul>
+                <li>Acceso a Internet de alta velocidad</li>
+                <li>Redes Privadas Virtuales (VPN)</li>
+                <li>Servicios en la Nube</li>
+                <li>Consultoría de TI</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form action="submit_form.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 CONECTIVATE CARIBE. All rights reserved.</p>
+    </footer>
+</body>
+</html>
