@@ -1,52 +1,263 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CONECTIVATE CARIBE</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CONECTIVATE Caribe</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="icon" href="favicon.ico" type="image/ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script> -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #e72a40, #2856a3, #2859a3);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    nav {
+      background: #333;
+      color: white;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      /* line-height: 2rem; */
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color : #bebebe;
+      text-decoration: underline;
+    }
+    .carousel {
+      margin: 20px auto;
+      height: 100%;
+    }
+    .carousel-inner>.item>img,
+    .carousel-inner>.item>a>img {
+      height: 35rem;
+      min-width: 60%;
+      margin: auto;
+      object-fit: cover;
+    }
+
+    .a .img {
+      width: 100%;
+      height: auto;
+      overflow-y: hidden;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      max-height: 80px;
+      /* margin-bottom: 5px; */
+    }
+
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background: #3366ff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <h1>CONECTIVATE CARIBE</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">Sobre Nosotros</a></li>
-                <li><a href="#services">Servicios</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="about">
-            <h2>Sobre Nosotros</h2>
-            <p>Bienvenido a CONECTIVATE CARIBE, su fuente número uno para todo lo relacionado con la conectividad caribeña. Nos dedicamos a ofrecerle lo mejor de los servicios, con un enfoque en la confiabilidad, el servicio al cliente y la singularidad.</p>
-        </section>
-        <section id="services">
-            <h2>Nuestros Servicios</h2>
-            <ul>
-                <li>Acceso a Internet de alta velocidad</li>
-                <li>Redes Privadas Virtuales (VPN)</li>
-                <li>Servicios en la Nube</li>
-                <li>Consultoría de TI</li>
-            </ul>
-        </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <form action="submit_form.php" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-    </main>
+
+  <header>
+    <img src="Logo transparente.png" alt="Logo CONECTIVATE Caribe" class="logo">
+    <img src="LETRA CONECTIVATE CARIBE.png" alt="Logo CONECTIVATE Caribe" class="logo">
+  </header>
+
+  <nav>
+    <a href="#servicios">Servicios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <div class="container">
+    <br>
+    <div id="theCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicadores -->
+      <ol class="carousel-indicators" id="indicatorsCarousel">
+        <li data-target="#theCarousel" data-slide-to="0" class="active"></li>
+      </ol>
+
+      <div class="carousel-inner" id="innerCarousel" role="listbox">
+        <div class="item active">
+          <img
+            src="https://drive.google.com/thumbnail?id=1TNiXwefE6qkhYbrtV-LpJSzAZELVcsIR"
+            alt="Ilustracion" width="600" height="424">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Gusti Ilustración</h3>
+            <p>Exposición</p>
+          </div>
+        </div>
+        <a class="left carousel-control" href="#theCarousel" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">anterior</span>
+        </a>
+        <a class="right carousel-control" href="#theCarousel" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">siguiente</span>
+        </a>
+      </div>
+    </div>
+
+    <section id="servicios">
+      <h2>Servicios</h2>
+      <div class="services">
+        <div class="service-card">
+          <h3>Consultoría Tecnológica</h3>
+          <p>Asesoramos empresas en transformación digital, infraestructura y soluciones en la nube.</p>
+        </div>
+        <div class="service-card">
+          <h3>Diseño y Desarrollo Web</h3>
+          <p>Creación de sitios web modernos, responsivos y enfocados en la experiencia del usuario.</p>
+        </div>
+        <div class="service-card">
+          <h3>Marketing Digital</h3>
+          <p>Campañas estratégicas en redes sociales, SEO y publicidad online para aumentar tu alcance.</p>
+        </div>
+        <div class="service-card">
+          <h3>Soporte Técnico</h3>
+          <p>Soluciones rápidas y efectivas para problemas técnicos, mantenimiento y seguridad informática.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2>Contáctanos</h2>
+      <form>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
     <footer>
-        <p>&copy; 2023 CONECTIVATE CARIBE. All rights reserved.</p>
+      <p>&copy; 2025 CONECTIVATE Caribe. Todos los derechos reservados.</p>
     </footer>
+    <script type="text/javascript">
+      let images = [];
+
+    fetch('https://ohas5t50i2.execute-api.us-east-1.amazonaws.com/images' , {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json' ,
+          'Access-Control-Allow-Origin': '*' 
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Assuming data is an array of image objects
+        images.push(...data);
+        renderCarousel();
+      }).catch(error => {
+        console.error('Error fetching images:', error);
+      });
+
+      function renderCarousel () {
+        document.getElementById('indicatorsCarousel').innerHTML = `
+          ${images.map((image, index) => `
+            <li data-target="#theCarousel" data-slide-to="${index}" class="${index === 0 ? 'active' : ''}"></li>
+          `).join('')}`;
+  
+        document.getElementById('innerCarousel').innerHTML = `
+          ${images.map((image , index) => `
+            <div class="item ${index === 0 ? 'active' : ''}">
+            <img
+              src="${image.real}"
+              alt="${image.real || 'Conectivate Img'}" width="600" height="1000px">
+            <div class="carousel-caption d-none d-md-block">
+              <h3> ${image.name.split('.')[0]}</h3>
+              ${image.description ? `<p>${image.description}</p>` : ""}
+            </div>
+          </div>
+          `).join('')}
+          <a class="left carousel-control" href="#theCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">anterior</span>
+          </a>
+          <a class="right carousel-control" href="#theCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">siguiente</span>
+          </a>`;
+      };
+    </script>
+
 </body>
+
 </html>
