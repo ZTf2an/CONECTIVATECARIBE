@@ -255,6 +255,7 @@
             <div class="item ${index === 0 ? 'active' : ''}">
             <img
               src="${image.real}"
+              onerror="this.onerror=null; this.src='${image.little}'"
               alt="${image.real || 'Conectivate Img'}" width="600" height="1000px">
             <div class="carousel-caption d-none d-md-block">
               <h3> ${image.name.split('.')[0]}</h3>
