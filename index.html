@@ -182,7 +182,9 @@
     }
 
     .bg-blue {
-      background: #79a3ec;
+      background: #0F9FFF;
+      /* background: linear-gradient(233deg, rgba(15, 159, 255, 1) 0%,rgba(96, 176, 205, 255) 22%,rgba(255, 249, 91, 1) 100%); */
+      background: linear-gradient(233deg, rgba(42, 70, 181, 1) 0%,rgba(96, 176, 205, 255) 22%,rgba(255, 247, 0, 1) 100%);
       color: rgb(255, 255, 255);
       padding: 20px;
       text-align: center;
@@ -310,12 +312,12 @@
         </div>
         <div class="service-card">
           <img src="images/controles.jpg" alt="">
-          <h3>Controles</h3>
-          <p>Velocidad y rendimiento optimizados para asambleas en Presenciales.</p>
+          <h3>Votación Controles</h3>
+          <p>Velocidad y rendimiento optimizados para asambleas Presenciales.</p>
         </div>
         <div class="service-card">
           <img src="images/votaciontarjetas.jpg" alt="">
-          <h3>Tarjetas</h3>
+          <h3>Votación Tarjetas</h3>
           <p>Precio justo y asambleas efectivas gracias al sistema de codigos de barras.</p>
         </div>
         <div class="service-card">
@@ -327,16 +329,18 @@
     </section>
 
     <section id="contacto">
-      <h2>Contáctanos</h2>
+      <h2>COTIZA</h2>
       <form>
         <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="nombre" required>
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre de la copropiedad o Nombre de cotizante" required>
 
         <label for="email">Correo electrónico</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" placeholder="Correo al cual enviar cotización" required>
 
         <label for="mensaje">Mensaje</label>
-        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+        <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿En qué servicio estás interesado? 
+¿Numero de unidades?
+¿Fecha estimada?" required></textarea>
 
         <button type="submit">Enviar</button>
       </form>
