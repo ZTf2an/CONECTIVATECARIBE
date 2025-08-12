@@ -81,7 +81,7 @@
     }
     /* ----------------------- CARDS SERVICIOS -----------------------------*/    
     .service-card {
-      background: white;
+      background: #fff;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
       border: 2px solid #8f8e8e;
@@ -95,32 +95,24 @@
       align-items: center;     /* Centra verticalmente */
       max-width: 310px;
     }
-    .service-card:hover{
-      box-shadow: -3px 2px 20px rgba(0, 0, 0, 0.7);
-      border: none;
-    }
     .service-card:active {
       transform: scale(0.95) rotateZ(1.7deg);
     }
     
     .service-card img{
       position : absolute;
-      display: block;
+      display: flex;
+      margin: 0;
       height: 100%;
       transition: all 0.8s;
       aspect-ratio: 1/1;
-      object-position: center;
       object-fit: cover;
-      top : auto
     }
     .service-card h3 {
       font-size: 35px;
       margin: 10px 8px;
       text-align: end;
-      max-width: 60%;
       background-color: rgba(0, 0, 0, 0.1); 
-      text-shadow: 2px 2px 2px#333;
-      border-radius: 6px;
       position: absolute;
       align-self: flex-end;
       color: white;
@@ -131,21 +123,26 @@
     }
     .service-card p {
       opacity: 0;
-      font-size: 20px;
+      /* opacity: 1; */
+      font-size: 23px;
       margin: 5px 10px;
       background-color: rgba(0, 0, 0, 0.1); 
+      height: 48%;
+      text-align: center;      
+      align-content: center;
       /* text-shadow: 2px 2px 2px#333; */
       border-radius: 6px;
       position: absolute;
       bottom: 0px;
       color: white;
-      text-align: center;
       padding: 0 3px;
     }
     
     /* ----------------------- CARDS SERVICIOS HOVERABLE-----------------------------*/
       .service-card:hover {
         background: white;
+        /* background: #FCFF87; */
+        /* background: linear-gradient(202deg, rgba(252, 255, 135, 1) 7%,rgba(227, 50, 119, 1) 45%,rgba(24, 19, 120, 1) 79%); */
         box-shadow: -3px 2px 20px rgba(0, 0, 0, 0.7);
         border: none;
         color: #333;
@@ -159,11 +156,12 @@
         height: 150px;
         border-radius: 50%;
         margin: 5px;
-        object-position: center; 
+        object-position: center;
       }
 
       .service-card:hover h3 {
-        background-color: #d0ddf07a ;
+        background-color: #d0ddf000 ;
+        text-shadow: 2px 2px 2px#ffffff;
         color: #333;
         text-shadow: none;
         top: 10px ;
@@ -184,7 +182,7 @@
     .bg-blue {
       background: #0F9FFF;
       /* background: linear-gradient(233deg, rgba(15, 159, 255, 1) 0%,rgba(96, 176, 205, 255) 22%,rgba(255, 249, 91, 1) 100%); */
-      background: linear-gradient(233deg, rgba(42, 70, 181, 1) 0%,rgba(96, 176, 205, 255) 22%,rgba(255, 247, 0, 1) 100%);
+      background: linear-gradient(233deg, rgba(42, 70, 181, 1) 0%, rgba(96, 176, 205, 255) 22%,rgba(255, 247, 0, 1) 100%);
       color: rgb(255, 255, 255);
       padding: 20px;
       text-align: center;
@@ -216,11 +214,45 @@
       cursor: pointer;
     }
 
+    .boton-enviando {
+      background-color: #888; /* gris medio */
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: not-allowed;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-family: sans-serif;
+      position: relative;
+    }
+
+    .puntos {
+      display: inline-block;
+      width: 1em;
+      text-align: left;
+    }
+
+    .puntos::after {
+      content: "...";
+      animation: puntosAnimados 1.2s steps(4, end) infinite;
+    }
+
     footer {
       background: #333;
       color: white;
       text-align: center;
       padding: 20px;
+    }
+
+    @keyframes puntosAnimados {
+      0%   { content: ""; }
+      25%  { content: "."; }
+      50%  { content: ".."; }
+      75%  { content: "..."; }
+      100% { content: ""; }
     }
 
     @keyframes show-to-up {
@@ -229,11 +261,11 @@
       }
       30%{
         opacity: 0;
-        bottom: 5px;
+        bottom: -5px;
       }
       100%{
         opacity: 1;
-        bottom : 30px;
+        bottom : 5px;
         position: absolute;
         color: #333;
       }
@@ -247,6 +279,14 @@
         opacity: 1;
       }
     }
+    @keyframes puntosAnimados {
+      0%   { content: ""; }
+      25%  { content: "."; }
+      50%  { content: ".."; }
+      75%  { content: "..."; }
+      100% { content: ""; }
+    }
+
 
   </style>
 </head>
@@ -260,6 +300,7 @@
 
   <nav>
     <a href="#servicios">Servicios</a>
+    <a href="#nosotros">Nosotros</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
@@ -291,6 +332,11 @@
         </a>
       </div>
     </div>
+
+    <section id="nosotros">
+      <h2>Nosotros</h2>
+      <p>Somos una empresa con mas de 14 años de experiencia en asambleas de propiedad horizontal</p>
+    </section>
 
     <section id="servicios" class="bg-blue">
       <h2>Servicios</h2>
@@ -325,12 +371,22 @@
           <h3>Votación Web</h3>
           <p>Votaciones interactivas para asambleas ágiles y tecnológicas</p>
         </div>
+        <div class="service-card">
+          <img src="images/votacionweb.jpeg" alt="">
+          <h3>Sonido Profesional</h3>
+          <p>Votaciones interactivas para asambleas ágiles y tecnológicas</p>
+        </div>
+        <div class="service-card">
+          <img src="images/votacionweb.jpeg" alt="">
+          <h3>Transcripción de acta</h3>
+          <p>Votaciones interactivas para asambleas ágiles y tecnológicas</p>
+        </div>
       </div>
     </section>
 
     <section id="contacto">
       <h2>COTIZA</h2>
-      <form>
+      <form id="solicitud">
         <label for="nombre">Nombre</label>
         <input type="text" id="nombre" name="nombre" placeholder="Nombre de la copropiedad o Nombre de cotizante" required>
 
@@ -342,7 +398,7 @@
 ¿Numero de unidades?
 ¿Fecha estimada?" required></textarea>
 
-        <button type="submit">Enviar</button>
+        <button type="submit" class="submitButton" form="solicitud" >Enviar</button>
       </form>
     </section>
 
@@ -350,6 +406,57 @@
       <p>&copy; 2025 CONECTIVATE Caribe. Todos los derechos reservados.</p>
     </footer>
     <script type="text/javascript">
+      const form = document.getElementById("solicitud");
+      const sumbitButton = document.querySelector(".submitButton");
+      const implementationId = "AKfycbxeOpIipVYRzz3Q5sTGwmfLSe2Tj6UGRuB4Uxx9kSu7W71v2zaGXeLEh5NA6tJjB3Er5w";
+      form.addEventListener("submit", sendData);
+
+      function sendData (e) {
+        e.stopPropagation();
+        e.preventDefault();
+        
+        const object = {
+          name : e.target.nombre.value ,
+          email : e.target.email.value ,
+          msj : e.target.mensaje.value
+        };
+        e.target.reset();
+        postData(object , () => {
+          e.target.innerHTML = `
+            <h3>Gracias por tu solicitud.</h3>
+            <h3>Hemos recibido tu petición</h3>
+            <h3>En los proximos minutos recibirás Respuesta</h3>`;
+          sumbitButton.innerHTML = "Enviando<span class='puntos'></span>";
+          sumbitButton.hidden = true;
+          sumbitButton.classList.remove("boton-enviando");
+        });
+        e.target.innerHTML = `<h3>Estamos Enviando tu Solicitud</h3>`;
+          sumbitButton.innerHTML = "Enviando<span class='puntos'></span>";
+        sumbitButton.innerHTML = "Enviando<span class='puntos'></span>";
+        sumbitButton.disabled = true;
+        sumbitButton.classList.add("boton-enviando");
+        console.log();
+
+      };
+
+      function postData (body , cb) {
+         fetch('https://ohas5t50i2.execute-api.us-east-1.amazonaws.com/sendData' , {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json' ,
+              'Access-Control-Allow-Origin': '*' 
+            },
+            body: JSON.stringify({implementationId : implementationId, body : body})
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log(data);
+            cb();
+          })
+          .catch(error => {
+            console.error('Error fetching images:', error);
+          });
+      };
       let images = [];
 
     fetch('https://ohas5t50i2.execute-api.us-east-1.amazonaws.com/images' , {
@@ -369,6 +476,7 @@
       }).catch(error => {
         console.error('Error fetching images:', error);
       });
+
 
       function renderCarousel () {
         document.getElementById('indicatorsCarousel').innerHTML = `
