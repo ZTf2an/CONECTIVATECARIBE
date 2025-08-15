@@ -9,7 +9,12 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/6f3c2b6d58.js" crossorigin="anonymous"></script>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -31,12 +36,15 @@
     }
 
     nav {
+      position: sticky;
       background: #333;
       color: white;
       display: flex;
       justify-content: center;
       gap: 30px;
       padding: 10px 0;
+      top: 0;
+      z-index: 200;
     }
 
     nav a {
@@ -69,9 +77,37 @@
     }
 
     section {
+      position: relative;
       padding: 40px 20px;
       width: 100%;
       margin: auto;
+    }
+
+    .section-paragraph {
+      display: flex;
+    }
+
+    .section-paragraph i {
+      margin : auto 5px;
+      font-size: 30px;
+      padding: 3px;
+      padding-bottom: 10px;
+      width: 40px;
+      flex-shrink: 0;
+    }
+
+    section p {
+      text-align: justify;
+      font-size: 25px;
+      padding: 5px;
+      line-height: 25px;
+      /* max-width: 80%; */
+    }
+    section svg {
+      position: absolute;
+      top : 0;
+      left: 0;
+      z-index: -1;
     }
 
     .services {
@@ -81,8 +117,8 @@
     }
     /* ----------------------- CARDS SERVICIOS -----------------------------*/    
     .service-card {
-      background: #fff;
-      border-radius: 8px;
+      background-color: #bdc3d3f5;
+      border-radius: 16px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
       border: 2px solid #8f8e8e;
       color: #333;
@@ -100,37 +136,43 @@
     }
     
     .service-card img{
-      position : absolute;
-      display: flex;
+      position: absolute;
+      top: 0;
+      left: 0;
       margin: 0;
       height: 100%;
-      transition: all 0.8s;
+      width: 100%;
+      transition: all 0.8s ease;
       aspect-ratio: 1/1;
       object-fit: cover;
     }
     .service-card h3 {
-      font-size: 35px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 40px;
+      color: #ffffff;
       margin: 10px 8px;
       text-align: end;
-      background-color: rgba(0, 0, 0, 0.1); 
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      max-width: 100%;
       position: absolute;
       align-self: flex-end;
       color: white;
       padding: 0 3px;
       transition: all 0.5s;
       right: 0;
-      top: 230px;
+      top: 225px;
+      /* font-size: clamp(16px, 280px, 35px); */
     }
     .service-card p {
       opacity: 0;
-      /* opacity: 1; */
       font-size: 23px;
       margin: 5px 10px;
       background-color: rgba(0, 0, 0, 0.1); 
       height: 48%;
       text-align: center;      
       align-content: center;
-      /* text-shadow: 2px 2px 2px#333; */
+      text-shadow: 0 0 6px#333 , 0 0 6px#333;
       border-radius: 6px;
       position: absolute;
       bottom: 0px;
@@ -141,8 +183,7 @@
     /* ----------------------- CARDS SERVICIOS HOVERABLE-----------------------------*/
       .service-card:hover {
         background: white;
-        /* background: #FCFF87; */
-        /* background: linear-gradient(202deg, rgba(252, 255, 135, 1) 7%,rgba(227, 50, 119, 1) 45%,rgba(24, 19, 120, 1) 79%); */
+        background: linear-gradient(50deg, #29297a52, #eaeaeea6);
         box-shadow: -3px 2px 20px rgba(0, 0, 0, 0.7);
         border: none;
         color: #333;
@@ -153,20 +194,26 @@
       }
       
       .service-card:hover img{
-        height: 150px;
-        border-radius: 50%;
         margin: 5px;
-        object-position: center;
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        border: 4px solid #fff;
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
       }
 
       .service-card:hover h3 {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        font-weight: 600;
+        letter-spacing: 0.5px;
         background-color: #d0ddf000 ;
         text-shadow: 2px 2px 2px#ffffff;
         color: #333;
-        text-shadow: none;
+        text-shadow: 0 0 5px #ffffff ,0 0 5px #ffffff;
         top: 10px ;
-        font-size: 25px;
-        width: 50%;
+        text-wrap: balance;
+        font-size: 20px;
+        width: 60%;
       }
 
       .service-card:hover p{
@@ -186,6 +233,7 @@
       color: rgb(255, 255, 255);
       padding: 20px;
       text-align: center;
+      margin-top: 2em;
     }
 
     form {
@@ -203,6 +251,7 @@
       margin-bottom: 20px;
       border: 1px solid #ccc;
       border-radius: 4px;
+      resize: vertical;
     }
 
     button {
@@ -212,6 +261,7 @@
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      margin: 5px;
     }
 
     .boton-enviando {
@@ -238,6 +288,24 @@
     .puntos::after {
       content: "...";
       animation: puntosAnimados 1.2s steps(4, end) infinite;
+    }
+
+    .contactos {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .contactos div a img {
+      height: 40px;
+      margin : 5px;
+      transition: all 0.1s;
+      border-radius: 50%;
+    }
+    .contactos div a img:hover {
+      height: 45px;
+      margin : 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     }
 
     footer {
@@ -267,7 +335,7 @@
         opacity: 1;
         bottom : 5px;
         position: absolute;
-        color: #333;
+        color: #ffffff;
       }
     }
     @keyframes show-slowly {
@@ -299,8 +367,8 @@
   </header>
 
   <nav>
-    <a href="#servicios">Servicios</a>
     <a href="#nosotros">Nosotros</a>
+    <a href="#servicios">Servicios</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
@@ -334,8 +402,46 @@
     </div>
 
     <section id="nosotros">
-      <h2>Nosotros</h2>
-      <p>Somos una empresa con mas de 14 años de experiencia en asambleas de propiedad horizontal</p>
+      <svg width="100%" height="100%" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <!-- Fondo claro -->
+        <rect width="100%" height="100%" fill="#00000000" />
+
+        <!-- Barra 1 -->
+        <rect x="40" y="100" width="30" height="80" fill="#e7e7e7">
+          <animate attributeName="height" values="80;120;80" dur="5s" repeatCount="indefinite" />
+          <animate attributeName="y" values="100;60;100" dur="5s" repeatCount="indefinite" />
+        </rect>
+
+        <!-- Barra 2 -->
+        <rect x="100" y="80" width="30" height="100" fill="#e7e7e7">
+          <animate attributeName="height" values="100;60;100" dur="5s" repeatCount="indefinite" />
+          <animate attributeName="y" values="80;120;80" dur="5s" repeatCount="indefinite" />
+        </rect>
+
+        <!-- Barra 3 -->
+        <rect x="160" y="90" width="30" height="90" fill="#e7e7e7">
+          <animate attributeName="height" values="90;130;90" dur="5s" repeatCount="indefinite" />
+          <animate attributeName="y" values="90;50;90" dur="5s" repeatCount="indefinite" />
+        </rect>
+
+        <!-- Barra 4 -->
+        <rect x="220" y="70" width="30" height="110" fill="#e7e7e7">
+          <animate attributeName="height" values="110;70;110" dur="5s" repeatCount="indefinite" />
+          <animate attributeName="y" values="70;110;70" dur="5s" repeatCount="indefinite" />
+        </rect>
+      </svg>
+
+      <h2>Sobre Nosotros</h2>
+      <p>Con más de 14 años de experiencia, somos líderes en la organización de asambleas presenciales, virtuales y mixtas, adaptándonos a las necesidades específicas de cada conjunto residencial o edificio</p>
+      <div class="section-paragraph">
+        <i class="fa-solid fa-map-location-dot"></i><p>Operamos en Barranquilla, Soledad, Santa Marta y Cartagena, brindando cobertura regional con atención personalizada.</p>
+      </div>
+      <div class="section-paragraph">
+        <i class="fa-solid fa-lightbulb"></i><p>Nuestra trayectoria nos permite ofrecer servicios altamente versátiles, respaldados por sistemas especializados que optimizan cada etapa del proceso, desde la convocatoria hasta la toma de decisiones.</p>
+      </div>
+      <div class="section-paragraph">
+        <i class="fa-solid fa-wrench"></i><p>Contamos con herramientas diseñadas exclusivamente para la propiedad horizontal, garantizando eficiencia, transparencia y participación activa.</p>
+      </div>
     </section>
 
     <section id="servicios" class="bg-blue">
@@ -371,7 +477,7 @@
           <h3>Votación Web</h3>
           <p>Votaciones interactivas para asambleas ágiles y tecnológicas</p>
         </div>
-        <div class="service-card">
+        <!-- <div class="service-card">
           <img src="images/votacionweb.jpeg" alt="">
           <h3>Sonido Profesional</h3>
           <p>Votaciones interactivas para asambleas ágiles y tecnológicas</p>
@@ -380,25 +486,38 @@
           <img src="images/votacionweb.jpeg" alt="">
           <h3>Transcripción de acta</h3>
           <p>Votaciones interactivas para asambleas ágiles y tecnológicas</p>
-        </div>
+        </div> -->
       </div>
     </section>
 
     <section id="contacto">
-      <h2>COTIZA</h2>
+      <h2>CONTACTANOS</h2>
       <form id="solicitud">
         <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Nombre de la copropiedad o Nombre de cotizante" required>
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre de la copropiedad o persona interesada" required>
 
         <label for="email">Correo electrónico</label>
-        <input type="email" id="email" name="email" placeholder="Correo al cual enviar cotización" required>
+        <input type="email" id="email" name="email" placeholder="Correo al cual Comunicarnos" required>
+
+        <label for="email">Telefono</label>
+        <input type="tel" id="tel" name="tel" placeholder="3001234567" required>
 
         <label for="mensaje">Mensaje</label>
         <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿En qué servicio estás interesado? 
 ¿Numero de unidades?
 ¿Fecha estimada?" required></textarea>
 
-        <button type="submit" class="submitButton" form="solicitud" >Enviar</button>
+        <div class="contactos">
+          <div>
+            <button type="submit" class="submitButton" form="solicitud" >Enviar</button>
+          </div>
+          <div>
+            <a href="https://www.facebook.com/share/172oBMyHaV/" target="_blank"><img src="images/facebookElpise.png"></a>
+            <a href="https://wa.me/573003631311" target="_blank"><img src="images/whatsappElipse.png"></a>
+            <a href="mailTo:conectivatecaribe@gmail.com" target="_blank"><img src="images/mailElipse.png"></a>
+            <a href="tel:+573003631311" target="_blank" title="telefono: 300 363 1311"><img src="images/telElipse.png"></a>
+          </div>
+        </div>
       </form>
     </section>
 
