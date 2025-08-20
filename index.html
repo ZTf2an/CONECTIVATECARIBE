@@ -500,7 +500,7 @@
         <input type="email" id="email" name="email" placeholder="Correo al cual Comunicarnos" required>
 
         <label for="email">Telefono</label>
-        <input type="tel" id="tel" name="tel" placeholder="3001234567" required>
+        <input type="number" id="tel" name="tel" placeholder="3001234567">
 
         <label for="mensaje">Mensaje</label>
         <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿En qué servicio estás interesado? 
@@ -527,7 +527,7 @@
     <script type="text/javascript">
       const form = document.getElementById("solicitud");
       const sumbitButton = document.querySelector(".submitButton");
-      const implementationId = "AKfycbxeOpIipVYRzz3Q5sTGwmfLSe2Tj6UGRuB4Uxx9kSu7W71v2zaGXeLEh5NA6tJjB3Er5w";
+      const implementationId = "AKfycbwk8QPrYUnT7v6QegWZ7_AkXltyCGszInqHBYleo48NwNNiYpFYH96NzcR2Naqcpq-jcA";
       form.addEventListener("submit", sendData);
 
       function sendData (e) {
@@ -537,7 +537,8 @@
         const object = {
           name : e.target.nombre.value ,
           email : e.target.email.value ,
-          msj : e.target.mensaje.value
+          msj : e.target.mensaje.value ,
+          tel : e.target.tel
         };
         e.target.reset();
         postData(object , () => {
