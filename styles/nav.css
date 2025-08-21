@@ -7,6 +7,8 @@ nav {
     gap: 30px;
     padding: 10px 0;
     top: 0;
+    animation: descender 0.8s ease-out forwards;
+    transform: translateY(-50px);
     z-index: 200;
 }
 
@@ -40,4 +42,10 @@ nav a:hover {
     width: 100%;
     height: auto;
     overflow-y: hidden;
+}
+
+@keyframes descender {
+    to {
+        transform: translateY(0);
+    }
 }

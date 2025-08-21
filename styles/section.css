@@ -41,3 +41,14 @@ section svg {
     text-align: center;
     margin-top: 2em;
 }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

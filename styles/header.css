@@ -14,7 +14,7 @@ body {
 }
 
 html {
-      scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 main {
@@ -23,13 +23,23 @@ main {
 
 header {
     background: #2856A3;
-    background: linear-gradient(to right, #e72a40, #2856a3, #2859a3);
+    background: linear-gradient(90deg,rgba(231, 42, 64, 1) 0%, rgba(40, 86, 163, 1) 50%, rgba(40, 89, 163, 1) 100%);
+    position: relative;
+    background-size: 100% 100%;
     color: white;
     padding: 20px;
     text-align: center;
+    animation: unset;
+    z-index: 300;
+    animation: gradient-fusion 1.5s;
 }
 
 .logo {
     max-height: 80px;
-    /* margin-bottom: 5px; */
+    animation: show-slowly 2s;
+}
+
+@keyframes gradient-fusion {
+    0% { background-size: 600%; }
+    100% { background-size: 100%; }
 }
