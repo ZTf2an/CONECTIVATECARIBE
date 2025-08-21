@@ -10,353 +10,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://kit.fontawesome.com/6f3c2b6d58.js" crossorigin="anonymous"></script>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      color: #333;
-    }
-
-    header {
-      background: linear-gradient(to right, #e72a40, #2856a3, #2859a3);
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-
-    nav {
-      position: sticky;
-      background: #333;
-      color: white;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 10px 0;
-      top: 0;
-      z-index: 200;
-    }
-
-    nav a {
-      color: white;
-      /* line-height: 2rem; */
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color : #bebebe;
-      text-decoration: underline;
-    }
-    .carousel {
-      margin: 20px auto;
-      height: 100%;
-      animation: show-slowly .8s linear;
-    }
-    .carousel-inner>.item>img,
-    .carousel-inner>.item>a>img {
-      height: 35rem;
-      min-width: 60%;
-      margin: auto;
-      object-fit: cover;
-    }
-
-    .a .img {
-      width: 100%;
-      height: auto;
-      overflow-y: hidden;
-    }
-
-    section {
-      position: relative;
-      padding: 40px 20px;
-      width: 100%;
-      margin: auto;
-    }
-
-    .section-paragraph {
-      display: flex;
-    }
-
-    .section-paragraph i {
-      margin : auto 5px;
-      font-size: 30px;
-      padding: 3px;
-      padding-bottom: 10px;
-      width: 40px;
-      flex-shrink: 0;
-    }
-
-    section p {
-      text-align: justify;
-      font-size: 25px;
-      padding: 5px;
-      line-height: 25px;
-      /* max-width: 80%; */
-    }
-    section svg {
-      position: absolute;
-      top : 0;
-      left: 0;
-      z-index: -1;
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    /* ----------------------- CARDS SERVICIOS -----------------------------*/    
-    .service-card {
-      background-color: #bdc3d3f5;
-      border-radius: 16px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-      border: 2px solid #8f8e8e;
-      color: #333;
-      transition: all 0.5s;
-      position : relative;
-      height: 330px;
-      overflow: hidden;
-      display: flex;
-      justify-content: center; /* Centra horizontalmente */
-      align-items: center;     /* Centra verticalmente */
-      max-width: 310px;
-    }
-    .service-card:active {
-      transform: scale(0.95) rotateZ(1.7deg);
-    }
-    
-    .service-card img{
-      position: absolute;
-      top: 0;
-      left: 0;
-      margin: 0;
-      height: 100%;
-      width: 100%;
-      transition: all 0.8s ease;
-      aspect-ratio: 1/1;
-      object-fit: cover;
-    }
-    .service-card h3 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 40px;
-      color: #ffffff;
-      margin: 10px 8px;
-      text-align: end;
-      background-color: rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      max-width: 100%;
-      position: absolute;
-      align-self: flex-end;
-      color: white;
-      padding: 0 3px;
-      transition: all 0.5s;
-      right: 0;
-      top: 225px;
-      /* font-size: clamp(16px, 280px, 35px); */
-    }
-    .service-card p {
-      opacity: 0;
-      font-size: 23px;
-      margin: 5px 10px;
-      background-color: rgba(0, 0, 0, 0.1); 
-      height: 48%;
-      text-align: center;      
-      align-content: center;
-      text-shadow: 0 0 6px#333 , 0 0 6px#333;
-      border-radius: 6px;
-      position: absolute;
-      bottom: 0px;
-      color: white;
-      padding: 0 3px;
-    }
-    
-    /* ----------------------- CARDS SERVICIOS HOVERABLE-----------------------------*/
-      .service-card:hover {
-        background: white;
-        background: linear-gradient(50deg, #29297a52, #eaeaeea6);
-        box-shadow: -3px 2px 20px rgba(0, 0, 0, 0.7);
-        border: none;
-        color: #333;
-        height: 330px;
-        display: flex;
-        justify-content: start;
-        align-items: flex-start;
-      }
-      
-      .service-card:hover img{
-        margin: 5px;
-        height: 150px;
-        width: 150px;
-        border-radius: 50%;
-        border: 4px solid #fff;
-        box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
-      }
-
-      .service-card:hover h3 {
-        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        background-color: #d0ddf000 ;
-        text-shadow: 2px 2px 2px#ffffff;
-        color: #333;
-        text-shadow: 0 0 5px #ffffff ,0 0 5px #ffffff;
-        top: 10px ;
-        text-wrap: balance;
-        font-size: 20px;
-        width: 60%;
-      }
-
-      .service-card:hover p{
-        animation: show-to-up 1s both;
-      } 
-      
-    /* ----------------------- FIN CARDS -----------------------------*/  
-    .logo {
-      max-height: 80px;
-      /* margin-bottom: 5px; */
-    }
-
-    .bg-blue {
-      background: #0F9FFF;
-      /* background: linear-gradient(233deg, rgba(15, 159, 255, 1) 0%,rgba(96, 176, 205, 255) 22%,rgba(255, 249, 91, 1) 100%); */
-      background: linear-gradient(233deg, rgba(42, 70, 181, 1) 0%, rgba(96, 176, 205, 255) 22%,rgba(255, 247, 0, 1) 100%);
-      color: rgb(255, 255, 255);
-      padding: 20px;
-      text-align: center;
-      margin-top: 2em;
-    }
-
-    form {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      resize: vertical;
-    }
-
-    button {
-      background: #3366ff;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      margin: 5px;
-    }
-
-    .boton-enviando {
-      background-color: #888; /* gris medio */
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      font-size: 16px;
-      border-radius: 6px;
-      cursor: not-allowed;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-family: sans-serif;
-      position: relative;
-    }
-
-    .puntos {
-      display: inline-block;
-      width: 1em;
-      text-align: left;
-    }
-
-    .puntos::after {
-      content: "...";
-      animation: puntosAnimados 1.2s steps(4, end) infinite;
-    }
-
-    .contactos {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .contactos div a img {
-      height: 40px;
-      margin : 5px;
-      transition: all 0.1s;
-      border-radius: 50%;
-    }
-    .contactos div a img:hover {
-      height: 45px;
-      margin : 0;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    }
-
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-
-    @keyframes puntosAnimados {
-      0%   { content: ""; }
-      25%  { content: "."; }
-      50%  { content: ".."; }
-      75%  { content: "..."; }
-      100% { content: ""; }
-    }
-
-    @keyframes show-to-up {
-      0%{
-        opacity: 0;
-      }
-      30%{
-        opacity: 0;
-        bottom: -5px;
-      }
-      100%{
-        opacity: 1;
-        bottom : 5px;
-        position: absolute;
-        color: #ffffff;
-      }
-    }
-    @keyframes show-slowly {
-      0%{
-        opacity: 0;
-        transform: scale(98%);     
-      }
-      100%{
-        opacity: 1;
-      }
-    }
-    @keyframes puntosAnimados {
-      0%   { content: ""; }
-      25%  { content: "."; }
-      50%  { content: ".."; }
-      75%  { content: "..."; }
-      100% { content: ""; }
-    }
-
-
-  </style>
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/nav.css">
+  <link rel="stylesheet" href="styles/section.css">
+  <link rel="stylesheet" href="styles/carousel.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <link rel="stylesheet" href="styles/services.css">
+  <link rel="stylesheet" href="styles/contacts.css">
 </head>
 
 <body>
@@ -477,16 +137,16 @@
           <h3>Votación Web</h3>
           <p>Votaciones interactivas para asambleas ágiles y tecnológicas</p>
         </div>
-        <!-- <div class="service-card">
-          <img src="images/votacionweb.jpeg" alt="">
+        <div class="service-card">
+          <img src="images/sonidoprofesional.png" alt="">
           <h3>Sonido Profesional</h3>
-          <p>Votaciones interactivas para asambleas ágiles y tecnológicas</p>
+          <p>El Mejor Servicio para amplificación de sonido.</p>
         </div>
         <div class="service-card">
-          <img src="images/votacionweb.jpeg" alt="">
-          <h3>Transcripción de acta</h3>
-          <p>Votaciones interactivas para asambleas ágiles y tecnológicas</p>
-        </div> -->
+          <img src="images/proyección.png" alt="">
+          <h3>Proyección Video</h3>
+          <p>Alquiler de Proyectores con telón. Conexiones entre Varias Pantallas</p>
+        </div>
       </div>
     </section>
 
@@ -520,7 +180,6 @@
         </div>
       </form>
     </section>
-
     <footer>
       <p>&copy; 2025 CONECTIVATE Caribe. Todos los derechos reservados.</p>
     </footer>
@@ -596,8 +255,6 @@
       }).catch(error => {
         console.error('Error fetching images:', error);
       });
-
-
       function renderCarousel () {
         document.getElementById('indicatorsCarousel').innerHTML = `
           ${images.map((image, index) => `

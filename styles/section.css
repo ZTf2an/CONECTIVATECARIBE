@@ -1,0 +1,43 @@
+section {
+    position: relative;
+    padding: 40px 20px;
+    width: 100%;
+    margin: auto;
+}
+
+.section-paragraph {
+    display: flex;
+}
+
+.section-paragraph i {
+    margin : auto 5px;
+    font-size: 30px;
+    padding: 3px;
+    padding-bottom: 10px;
+    width: 40px;
+    flex-shrink: 0;
+}
+
+section p {
+    text-align: justify;
+    font-size: 25px;
+    padding: 5px;
+    line-height: 25px;
+    /* max-width: 80%; */
+}
+section svg {
+    position: absolute;
+    top : 0;
+    left: 0;
+    z-index: -1;
+}
+
+.bg-blue {
+    background: #0F9FFF;
+    /* background: linear-gradient(233deg, rgba(15, 159, 255, 1) 0%,rgba(96, 176, 205, 255) 22%,rgba(255, 249, 91, 1) 100%); */
+    background: linear-gradient(233deg, rgba(42, 70, 181, 1) 0%, rgba(96, 176, 205, 255) 22%,rgba(255, 247, 0, 1) 100%);
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    text-align: center;
+    margin-top: 2em;
+}

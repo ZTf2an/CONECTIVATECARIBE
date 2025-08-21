@@ -1,0 +1,79 @@
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+button {
+    background: #3366ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.boton-enviando {
+    background-color: #888; /* gris medio */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: not-allowed;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: sans-serif;
+    position: relative;
+}
+
+.puntos {
+    display: inline-block;
+    width: 1em;
+    text-align: left;
+}
+
+.puntos::after {
+    content: "...";
+    animation: puntosAnimados 1.2s steps(4, end) infinite;
+}
+
+.contactos {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contactos div a img {
+    height: 40px;
+    margin : 5px;
+    transition: all 0.1s;
+    border-radius: 50%;
+}
+.contactos div a img:hover {
+    height: 45px;
+    margin : 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes puntosAnimados {
+    0%   { content: ""; }
+    25%  { content: "."; }
+    50%  { content: ".."; }
+    75%  { content: "..."; }
+    100% { content: ""; }
+}
