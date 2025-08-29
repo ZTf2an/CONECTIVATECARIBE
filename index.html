@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="styles/footer.css">
   <link rel="stylesheet" href="styles/services.css">
   <link rel="stylesheet" href="styles/contacts.css">
+  <link rel="stylesheet" href="styles/clients.css">
 </head>
 
 <body>
@@ -158,6 +159,15 @@
       </div>
     </section>
 
+    <section>
+      <h2 class="center">NUESTROS CLIENTES</h2>
+      <div class="slider">
+        <div class="slider-track" id="slider">
+          <img class="clientelogo" src="images/LOGO CONECTIVATE CARIBE.png" alt="Imagen 1" />
+        </div>
+      </div>
+    </section>
+
     <section id="contacto" class="reveal">
       <h2>CONTACTANOS</h2>
       <form id="solicitud">
@@ -259,6 +269,7 @@
           });
       };
       let images = [];
+      let clientLogos = [];
 
     fetch('https://ohas5t50i2.execute-api.us-east-1.amazonaws.com/images' , {
         method: 'GET',
@@ -277,6 +288,33 @@
       }).catch(error => {
         console.error('Error fetching images:', error);
       });
+      
+    fetch('https://ohas5t50i2.execute-api.us-east-1.amazonaws.com/clientlogos' , {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json' ,
+          'Access-Control-Allow-Origin': '*' 
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        renderClientsSlider(data);
+      }).catch(error => {
+        // console.error('Error fetching images:', error);
+      });
+
+      function renderClientsSlider (arr) {
+        console.log('renderizando slider');
+        const slider = document.getElementById('slider')
+        const html = `
+        ${arr.map(( img , i )=> `
+          <img class="clientelogo" src="${img.little}" alt="Imagen ${i+1}" />
+        `).join("")}
+        `;
+        slider.innerHTML = html.repeat(2);
+      }
+
+
       function renderCarousel () {
         document.getElementById('indicatorsCarousel').innerHTML = `
           ${images.map((image, index) => `
@@ -305,6 +343,8 @@
             <span class="sr-only">siguiente</span>
           </a>`;
       };
+
+      
     </script>
 
 </body>
