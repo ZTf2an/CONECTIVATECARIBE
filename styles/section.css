@@ -32,6 +32,10 @@ section svg {
     z-index: -1;
 }
 
+.container {
+    position: relative;
+}
+
 .bg-blue {
     background: #0F9FFF;
     /* background: linear-gradient(233deg, rgba(15, 159, 255, 1) 0%,rgba(96, 176, 205, 255) 22%,rgba(255, 249, 91, 1) 100%); */
@@ -41,6 +45,11 @@ section svg {
     text-align: center;
     margin-top: 2em;
 }
+
+/* .bg-carousel{
+    background: #1a1515;
+    background: radial-gradient(circle, rgb(255, 255, 255) 0% , rgba(153, 153, 158) 50%);
+} */
 
 .reveal {
   opacity: 0;
